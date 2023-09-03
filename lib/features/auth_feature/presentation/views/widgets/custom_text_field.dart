@@ -23,22 +23,26 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
           SizedBox(height: 8,),
-          TextFormField(
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              color: Color(0xff2A2B2E),
-            ),
-            decoration: InputDecoration(
-              hintText: hinttext,
-              suffixIcon: Icon(icon,size: 20,color: Color(0xff808194),),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: Color(0xff808194),),
+          SizedBox(
+            height: 44,
+            child: TextFormField(
+              textAlignVertical: TextAlignVertical.bottom,
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: Color(0xff2A2B2E),
               ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: Colors.cyan,),
+              decoration: InputDecoration(
+                hintText: hinttext,
+                suffixIcon: Icon(icon,size: 20,color: Color(0xff808194),),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Color(0xff808194),),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.cyan,),
+                ),
               ),
             ),
           ),
