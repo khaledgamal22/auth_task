@@ -1,12 +1,11 @@
-import 'package:auth_task/core/widgets/app_routes.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_button.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_text_field.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/view_up_section.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class RegisterViewBody extends StatelessWidget {
+  const RegisterViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class LoginViewBody extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  'Log in to your account',
+                  'Create new account',
                   style: TextStyle(
                     color: Color(0xff2A2B2E),
                     fontWeight: FontWeight.w700,
@@ -37,6 +36,10 @@ class LoginViewBody extends StatelessWidget {
                 hinttext: 'Enter your username',
                 icon: Icons.cancel_outlined,
               ),
+              SizedBox(
+                height: 22,
+              ),
+              CustomTextField(headtext: 'Email', icon: Icons.cancel_outlined, hinttext: 'Enter an email'),
               SizedBox(
                 height: 22,
               ),
@@ -70,7 +73,7 @@ class LoginViewBody extends StatelessWidget {
                   TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Forget Password?',
+                      'Have a problem?',
                       style: TextStyle(
                         color: Color(0xff2A2B2E),
                         fontSize: 14,
@@ -88,14 +91,14 @@ class LoginViewBody extends StatelessWidget {
                 height: 22,
               ),
               CustomButton(
-                title: 'Login',
+                title: 'Register',
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Row(
                   children: [
                     Text(
-                      "Don't have an account?",
+                      "Already have an account?",
                       style: TextStyle(
                         color: Color(0xff2A2B2E),
                         fontSize: 14,
@@ -104,10 +107,10 @@ class LoginViewBody extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        GoRouter.of(context).push(AppRoutes.kRegister);
+                        GoRouter.of(context).pop();
                       },
                       child: Text(
-                        'Register',
+                        'Login',
                         style: TextStyle(
                           color: Color(0xff2A2B2E),
                           fontSize: 14,
