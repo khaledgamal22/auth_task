@@ -1,4 +1,4 @@
-import 'package:auth_task/features/auth_feature/views/widgets/custom_text_field.dart';
+import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewBody extends StatelessWidget {

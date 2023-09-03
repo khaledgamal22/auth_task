@@ -1,7 +1,7 @@
-import 'package:auth_task/features/auth_feature/views/login_view.dart';
+import 'package:auth_task/features/auth_feature/presentation/views/login_view.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/auth_feature/views/register_view.dart';
+import '../../features/auth_feature/presentation/views/register_view.dart';
 
 abstract class AppRoutes {
 
