@@ -1,7 +1,7 @@
 import 'package:auth_task/core/widgets/app_routes.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_button.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_text_field.dart';
-import 'package:auth_task/features/auth_feature/presentation/views/widgets/view_up_section.dart';
+import 'package:auth_task/features/auth_feature/presentation/views/widgets/view_up_auth_section.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -68,7 +68,9 @@ class LoginViewBody extends StatelessWidget {
                   ),
                   Spacer(),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRoutes.kProfile);
+                    },
                     child: Text(
                       'Forget Password?',
                       style: TextStyle(

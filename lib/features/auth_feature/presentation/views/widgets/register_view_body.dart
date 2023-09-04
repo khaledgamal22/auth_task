@@ -1,6 +1,6 @@
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_button.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_text_field.dart';
-import 'package:auth_task/features/auth_feature/presentation/views/widgets/view_up_section.dart';
+import 'package:auth_task/features/auth_feature/presentation/views/widgets/view_up_auth_section.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

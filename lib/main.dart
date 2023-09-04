@@ -10,6 +10,9 @@ class AuthTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData(
+        fontFamily: 'Inter',
+      ),
       routerConfig: AppRoutes.routes,
       debugShowCheckedModeBanner: false,
     );
