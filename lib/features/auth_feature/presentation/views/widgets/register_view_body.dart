@@ -11,12 +11,15 @@ class RegisterViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: SingleChildScrollView(
           child: Column(
             children: [
               ViewUpSection(),
-              SizedBox(height: 70,),
+              SizedBox(
+                height: 70,
+              ),
               Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -39,7 +42,10 @@ class RegisterViewBody extends StatelessWidget {
               SizedBox(
                 height: 22,
               ),
-              CustomTextField(headtext: 'Email', icon: Icons.cancel_outlined, hinttext: 'Enter an email'),
+              CustomTextField(
+                  headtext: 'Email',
+                  icon: Icons.cancel_outlined,
+                  hinttext: 'Enter an email'),
               SizedBox(
                 height: 22,
               ),

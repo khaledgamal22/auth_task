@@ -1,9 +1,10 @@
 import 'package:auth_task/core/widgets/app_routes.dart';
 import 'package:flutter/material.dart';
 
-main(){
+main() {
   runApp(const AuthTask());
 }
+
 class AuthTask extends StatelessWidget {
   const AuthTask({super.key});
 

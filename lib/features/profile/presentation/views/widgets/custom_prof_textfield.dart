@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomProfTextField extends StatelessWidget {
-  const CustomProfTextField({super.key, required this.headtext, required this.hinttext});
+  const CustomProfTextField(
+      {super.key, required this.headtext, required this.hinttext});
 
   final String headtext;
   final String hinttext;
@@ -21,7 +22,9 @@ class CustomProfTextField extends StatelessWidget {
               fontWeight: FontWeight.w400,
             ),
           ),
-          SizedBox(height: 8,),
+          SizedBox(
+            height: 8,
+          ),
           SizedBox(
             height: 44,
             child: TextFormField(
@@ -35,11 +38,15 @@ class CustomProfTextField extends StatelessWidget {
                 hintText: hinttext,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: Color(0xff808194),),
+                  borderSide: BorderSide(
+                    color: Color(0xff808194),
+                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: Colors.cyan,),
+                  borderSide: BorderSide(
+                    color: Colors.cyan,
+                  ),
                 ),
               ),
             ),

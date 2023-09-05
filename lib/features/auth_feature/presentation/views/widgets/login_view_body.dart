@@ -1,23 +1,37 @@
+import 'package:auth_task/core/widgets/api_services.dart';
 import 'package:auth_task/core/widgets/app_routes.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_button.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/custom_text_field.dart';
 import 'package:auth_task/features/auth_feature/presentation/views/widgets/view_up_auth_section.dart';
+import 'package:auth_task/features/profile/data/user.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginViewBody extends StatelessWidget {
+class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
+
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+class _LoginViewBodyState extends State<LoginViewBody> {
+  String? username;
+
+  String? password;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: SingleChildScrollView(
           child: Column(
             children: [
               ViewUpSection(),
-              SizedBox(height: 70,),
+              SizedBox(
+                height: 70,
+              ),
               Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -36,6 +50,11 @@ class LoginViewBody extends StatelessWidget {
                 headtext: 'Username',
                 hinttext: 'Enter your username',
                 icon: Icons.cancel_outlined,
+                onChanged: (p0) {
+                  setState(() {
+                    username=p0;
+                  });
+                },
               ),
               SizedBox(
                 height: 22,
@@ -44,6 +63,11 @@ class LoginViewBody extends StatelessWidget {
                 headtext: 'Password',
                 hinttext: 'Enter your password',
                 icon: Icons.visibility_off_outlined,
+                onChanged: (p0) {
+                  setState(() {
+                    password=p0;
+                  });
+                },
               ),
               SizedBox(
                 height: 22,
@@ -69,7 +93,6 @@ class LoginViewBody extends StatelessWidget {
                   Spacer(),
                   TextButton(
                     onPressed: () {
-                      GoRouter.of(context).push(AppRoutes.kProfile);
                     },
                     child: Text(
                       'Forget Password?',
@@ -91,6 +114,16 @@ class LoginViewBody extends StatelessWidget {
               ),
               CustomButton(
                 title: 'Login',
+                onTap: () async{
+                  var data =await ApiService()
+                      .post(url: 'https://dummyjson.com/auth/login', body: {
+                    'username': username,
+                    'password': password,
+                  });
+                  User user=User.fromJson(data);
+                  print(user.username);
+                  GoRouter.of(context).push(AppRoutes.kProfile,extra: user);
+                },
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),

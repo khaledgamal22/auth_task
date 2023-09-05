@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ViewUpProfSection extends StatelessWidget {
-  const ViewUpProfSection({super.key});
+  const ViewUpProfSection({super.key, required this.image});
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class ViewUpProfSection extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/346780424_714371070489212_836219911072118910_n.jpg'),
+                backgroundImage: NetworkImage(image),
               ),
             ),
             decoration: BoxDecoration(
